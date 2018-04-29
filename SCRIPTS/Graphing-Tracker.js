@@ -465,13 +465,13 @@ function estimate() {
     if ($('#dtPairsLogs thead').length > 0) {
         $('#dtPairsLogs tbody tr').each(function() {
             $(this).find('b').remove();
-            var difference = ($(this).find('td.bought-cost:last .current-value').text().replace("€", "").replace(",", "") - $(this).find('td.bought-cost:last .bought-cost').text().replace("€", "").replace(",", "")).toFixed(2);
-            var difference2 = ($(this).find('td.current-value.blue-color:first .current-value').text().replace("€", "").replace(",", "") - $(this).find('td.current-value.blue-color:first .bought-cost').text().replace("€", "").replace(",", "")).toFixed(8);
+            var difference = ($(this).find('td.bought-cost:last .current-value').text().replace("$", "").replace(",", "") - $(this).find('td.bought-cost:last .bought-cost').text().replace("$", "").replace(",", "")).toFixed(2);
+            var difference2 = ($(this).find('td.current-value.blue-color:first .current-value').text().replace("$", "").replace(",", "") - $(this).find('td.current-value.blue-color:first .bought-cost').text().replace("$", "").replace(",", "")).toFixed(8);
             if (difference2 > 0) {
-                $(this).find('td.bought-cost:last .bought-cost').append('<b style="color:#05b16f;border-top: 1px solid;"><br>€' + difference.toLocaleString() + '</b>');
+                $(this).find('td.bought-cost:last .bought-cost').append('<b style="color:#05b16f;border-top: 1px solid;"><br>$' + difference.toLocaleString() + '</b>');
                 $(this).find('td.current-value.blue-color:first .bought-cost').append('<b style="color:#05b16f;border-top: 1px solid;"><br>' + difference2 + '</b>');
             } else {
-                $(this).find('td.bought-cost:last .bought-cost').append('<b style="color:#d85353;border-top: 1px solid;"><br>€' + difference.toLocaleString() + '</b>');
+                $(this).find('td.bought-cost:last .bought-cost').append('<b style="color:#d85353;border-top: 1px solid;"><br>$' + difference.toLocaleString() + '</b>');
                 $(this).find('td.current-value.blue-color:first .bought-cost').append('<b style="color:#d85353;border-top: 1px solid;"><br>' + difference2 + '</b>');
             }
         });
